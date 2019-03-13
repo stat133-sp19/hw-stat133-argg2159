@@ -1,14 +1,14 @@
 ---
 title: "Is Curry the Most Effective Warrior?"
 author: "Andrea (Drew) Galloro"
-output: html_document
+output: github_document
 ---
-
-******
 
 ```{r setup, include=FALSE}
 library(knitr)
 library(dplyr)
+library(png)
+library(jpeg)
 ```
 
 ```{r echo = FALSE}
@@ -27,7 +27,7 @@ colclass <- c(
 )
 
 shots <- read.csv(file = "../output/shots-data.csv", colClasses = colclass)
-shots <- select(shots, c(name, shot_type, shot_made_flag))
+shots <- select(shots, c(name, shot_type, shot_made_flag, y))
 
 # create data frame for Overall Effective shooting percent
 
@@ -53,15 +53,41 @@ s3pt <- mutate(s3pt1, made = s3pt2$n)
 names(s3pt) <-  c("name", "total", "made")
 s3pt <- s3pt %>% mutate(percent_made  = made/total*100) %>% arrange(desc(percent_made))
 
+#table for shots close to half court (y > 250)
+fs1 <- shots %>% filter(y >= 250) %>% group_by(name) %>% tally()
+fs2 <- shots %>% filter(y >= 250 & shot_made_flag == "shot_yes") %>% group_by(name) %>% tally()
+names(fs1) <- c("name", "total")
+fs1$made <- fs2$n
+fs <- fs1 %>% mutate(percent_made = made/total) %>% arrange(desc(percent_made))
 ```
 
-The warriors have become a sensation in the NBA. In the 2016 season they [beat the record](https://www.basketball-reference.com/leagues/NBA_best_records.html) for the best season and best start (going 73-9 for the 2016 season and starting 24-0).
 
-The Star player during all of this: Stephen Curry. Who also broke a record in making the most 3 pointers during the 2016 season and tied for most three pointers in a single game.
+The Golden State Warriors have become a sensation in the NBA. In the 2016 season they [beat the record](https://www.basketball-reference.com/leagues/NBA_best_records.html) for the best season and best start (going 73-9 for the 2016 season and starting 24-0). It’s hard to be in the Bay Area and ignore the presence of the “Dubs”. 
+
+The Star player during all of this: Stephen Curry. Who was breaking individual player records in making the most 3 pointers in a regular season and tied for most three pointers in a single game. All of this along with his ["Splash Brother"](https://en.wikipedia.org/wiki/Splash_Brothers) Klay Thompson.  
+
+However, It’s not all about the Splash Brothers. Let’s break down the statistics of the Golden State Warriors’ “death lineup”  for the 2016 season.
+
+```{r echo = FALSE, align = "center"}
+knitr::include_graphics("../images/Stephen-Curry-Draymond-Green-Kevin-Durant-Klay-Thompson-Andre-Iguodala-warriors.jpg")
+```
+from left to right: Curry, Green, Durant, Thompson, and Iguodala
+
+# Shot Charts:
+
+First, we're going to look at the player's behavior on the court. To aid us, I've made the chart of half-court shooting data below. (shot_made_flag is an indicator of wether the attempted shot scored)
+
+```{r out.width = "80%", echo = FALSE, align = "center"}
+knitr::include_graphics("../images/gsw-shot-charts.png")
+```
+
+So what can we say about the players from looking at these? First, for Durant Thompson and Curry, they are shooting in the midrange frequently, while Iguodala and Green favor eighter shots on the 3pt line or under the basket. Second, Curry seems more willing to attempt shots closer to half court. This does not lead to a scored basket the majority of the time, but it says he's willing to take the risk. It could also be that he is the main shooter and often has the ball at the end of periods and so is forced to take the shot. 
+
+# Effective Shooting Percentages:
 
 # 2pt
 ```{r echo = FALSE}
-kable(s2pt)
+kable(s2pt, caption = "Two Pointers")
 ```
 
 # 3pt
@@ -74,6 +100,4 @@ kable(s3pt)
 kable(st)
 ```
 
-```{r out.width = "80%", echo = FALSE, align = "center"}
-knitr::include_graphics("../images/gsw-shot-charts.png")
-```
+
