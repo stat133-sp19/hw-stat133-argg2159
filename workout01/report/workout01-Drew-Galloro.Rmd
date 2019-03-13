@@ -1,0 +1,79 @@
+---
+title: "Is Curry the Most Effective Warrior?"
+author: "Andrea (Drew) Galloro"
+output: html_document
+---
+
+******
+
+```{r setup, include=FALSE}
+library(knitr)
+library(dplyr)
+```
+
+```{r echo = FALSE}
+
+#this is to import data and make tables.
+
+colclass <- c(
+  rep("character",3),
+  rep("integer",3), 
+  rep("factor",3), 
+  "integer", 
+  "factor", 
+  rep("integer",2),
+  "factor",
+  "integer"
+)
+
+shots <- read.csv(file = "../output/shots-data.csv", colClasses = colclass)
+shots <- select(shots, c(name, shot_type, shot_made_flag))
+
+# create data frame for Overall Effective shooting percent
+
+st1 <- shots %>% group_by(name) %>% tally() 
+st2 <- shots %>% filter(shot_made_flag == "shot_yes") %>% group_by(name) %>% tally()
+st <- mutate(st1, made = st2$n)
+names(st) <-  c("name", "total", "made")
+st <- st %>% mutate(percent_made  = made/total*100) %>% arrange(desc(percent_made))
+
+# create data frame for 2PT Effective shooting percent
+
+s2pt1 <- shots %>% filter(shot_type == "2PT Field Goal")  %>% group_by(name) %>% tally()
+s2pt2 <- shots %>% filter(shot_made_flag == "shot_yes" & shot_type == "2PT Field Goal") %>% group_by(name) %>% tally()
+s2pt <- mutate(s2pt1, made = s2pt2$n)
+names(s2pt) <-  c("name", "total", "made")
+s2pt <- s2pt %>% mutate(percent_made  = made/total*100) %>% arrange(desc(percent_made))
+
+# create data frame fot 3PT Effective shooting percent
+
+s3pt1 <- shots %>% filter(shot_type == "3PT Field Goal") %>% group_by(name) %>% tally()
+s3pt2 <- shots %>% filter(shot_made_flag == "shot_yes" & shot_type == "3PT Field Goal") %>% group_by(name) %>% tally()
+s3pt <- mutate(s3pt1, made = s3pt2$n)
+names(s3pt) <-  c("name", "total", "made")
+s3pt <- s3pt %>% mutate(percent_made  = made/total*100) %>% arrange(desc(percent_made))
+
+```
+
+The warriors have become a sensation in the NBA. In the 2016 season they [beat the record](https://www.basketball-reference.com/leagues/NBA_best_records.html) for the best season and best start (going 73-9 for the 2016 season and starting 24-0).
+
+The Star player during all of this: Stephen Curry. Who also broke a record in making the most 3 pointers during the 2016 season and tied for most three pointers in a single game.
+
+# 2pt
+```{r echo = FALSE}
+kable(s2pt)
+```
+
+# 3pt
+```{r echo = FALSE}
+kable(s3pt)
+```
+
+# total
+```{r echo = FALSE}
+kable(st)
+```
+
+```{r out.width = "80%", echo = FALSE, align = "center"}
+knitr::include_graphics("../images/gsw-shot-charts.png")
+```
