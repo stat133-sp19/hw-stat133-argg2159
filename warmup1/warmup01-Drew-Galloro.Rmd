@@ -1,0 +1,79 @@
+---
+title: "Warmup 01"
+author: "Andrea (Drew) Galloro"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(png)
+library(grid)
+```
+***
+## Star Wars
+***
+### [Poe Dameron](https://starwars.fandom.com/wiki/Poe_Dameron)
+
+> "We are the spark that'll ignite the fire that'll burn the First Order down."  
+> -Poe Dameron
+> <div style = "width:400px;height:375px">
+  ![](https://upload.wikimedia.org/wikipedia/en/0/0b/Poe_Dameron-Force_Awakens_%282015%29.png)
+</div>
+
+Description | Value
+----------- | ------
+Species     | Human
+Gender      | Male
+Eye Color   | Brown
+Hair Color  | Brown
+
+
+
+## Cooking Recipe
+***
+
+### [Irish Soda Bread Scones](https://smittenkitchen.com/2010/03/irish-soda-bread-scones/)
+
+<div style = "width:300px;height:200px">
+![](https://smittenkitchendotcom.files.wordpress.com/2010/03/irish-soda-bread-scones.jpg)
+</div>
+
+#### Ingredients
+
+* 3 cups of all-purpose flour
+* 1 cup cake flour
+* 1/4 cup granulated sugar
+* 1 1/2 teaspoons baking soda
+* 1 1/2 teaspoons cream of tartar
+* 1 teaspoon table salt
+* 5 tablespoons unsalted butter
+  + 4 tablespoons softened, 1 melted
+* 1 1/4 cups buttermilk
+* 1 egg lightly beaten
+* 1 tablespoon caraway seeds (optional)
+
+### Directions
+
+1. Heat oven to 400 degrees with a rack in the upper-middle position. Whisk dry ingredients (flours, sugar, baking soda, cream of tartar and salt) in a large bowl. Work the softened butter into the dry ingredients with a fork, pastry blender or your fingertips until the flour mixture resembles coarse crumbs.
+
+2. Add the wet ingredients (buttermilk and egg), currants or raisins and caraway seeds, if you're using them, and stir with a fork until the dough just begins to come together. Turn out onto a work surface (CI says you need a floured one but I didn't agree) and knead until the dough just becomes cohesive and bumpy. You're not going for a smooth dough - CI warns that this will make it tough.
+
+3. Pat dough into a round and use a knife or dough divider to cut it into 8 wedges. Form each wedge into a round and place on a parchment-lined or greased baking sheet. Cut a cross shape into the top of each. Bake for 15 to 20 minutes, or until the internal temperature reaches 170 degrees (this is especially helpful in this recipe, where doneness is hard to judge from the outside). Scones should be golden brown a skewer should come out clean. Remove from the oven and brush with butter before cooling to room temperature. Eat on day one.
+
+## Euclidean Distance (from [Wikipedia](https://en.wikipedia.org/wiki/Euclidean_distance))
+***
+
+### Definition
+
+The **Euclidean distance** between pints **p** and **q** is the length of the line segment connecting thhem $(\overline{\bf{pq}})$  
+
+In Cartesian coordingates, if **p**$\mathbf{p} = (p_1, p_2, ..., p_n)$ and $\mathbf{q} = (q_1, q_2, ..., q_n)$ are two points in Euclidean *n*-space, then the distance (d) from **p** to **q**, or from **q** to **p** is given by the Pythagorean formula.  
+
+$$d(\mathbf{p},\mathbf{q}) = d(\mathbf{q},\mathbf{p}) = \sqrt{(q_1 - p_1)^2 + (q_2 - p_2)^2 + \cdots + (q_n - p_n)^2} = \sqrt{\sum_{i = 1}^n (q_i - p_i)^2} $$
+
+The position of a point in a Euclidean *n*-space is a Euclidean vector. So **p** and **q** may be represented as Euclidean vectors, starting from the origin of the space (initial point) with their tips (terminal points) ending at two points. The **Euclidean norm**, or **Euclidean length**, or **magnitude** of a vector measure the length of the vector.
+
+$$||\mathbf{p}|| = \sqrt{p_1^2 + p_2^2 + \cdots + p_n^2} = \sqrt{\mathbf{p\cdot p}}$$,
+
+where the last expression involves the dot product.
+
