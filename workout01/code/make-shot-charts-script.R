@@ -26,6 +26,8 @@
 #   stephen-curry-shot-chart.pdf
 #   gsw-shot-charts.pdf
 #   gsw-shot-charts.png
+#   durant-iguodala-shot-chart.pdf
+#   durant-iguodala-shot-chart.png
 #
 ######################
 
@@ -34,6 +36,7 @@
 library(grid)
 library(jpeg)
 library(ggplot2)
+library(dplyr)
 
 # create column class vector for each "read" function
 
@@ -111,6 +114,17 @@ shot_charts <- ggplot(data = shots) +
   theme_minimal() +
   theme(legend.position = "top")
 
+# Durant and Iguodala Shot Charts
+
+durant_iguodala_shot_charts <- ggplot(data = filter(shots, name == "Andre Iguodala" | name == "Kevin Durant")) + 
+  annotation_custom(court_image, -250, 250, -50, 420) + 
+  geom_point(aes(x = x, y = y, color = shot_made_flag)) + 
+  ylim(-50, 420) + 
+  ggtitle('Shot Charts: Durant and Iguodala (2016 season)') + 
+  facet_wrap(~name) +
+  theme_minimal() +
+  theme(legend.position = "top")
+
 # export shot charts
 
 pdf(file = "../images/andre-iguodala-shot-chart.pdf", width = 6.5, height = 5)
@@ -146,3 +160,12 @@ dev.off()
 png(file = "../images/gsw-shot-charts.png", width = 8, height = 7, units = "in", res = 200)
 shot_charts
 dev.off()
+
+pdf(file = "../images/durant-iguodala-shot-charts.pdf", width = 8, height = 5)
+durant_iguodala_shot_charts
+dev.off()
+
+png(file = "../images/durant-iguodala-shot-charts.png", width = 8, height = 5, units = "in", res = 200)
+durant_iguodala_shot_charts
+dev.off()
+
