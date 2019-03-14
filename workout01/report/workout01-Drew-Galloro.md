@@ -97,7 +97,12 @@ continued if we only look at two pointers
 
 ordered by effective shooting percentages
 
-Except now Iguodala leads the pack in effectiveness.
+Except now Iguodala leads the pack in effectiveness. If we return to his
+and Durant’s shot charts, Durant is more willing to shoot at the
+midrange, while Iguodala is more willing to shoot under the basket. (See
+Below)
+
+<img src="../images/durant-iguodala-shot-charts.png" width="95%" />
 
 ### Three Pointers
 
@@ -117,3 +122,9 @@ made less then Curry. This suggests a more reckless shooting style for
 curry.
 
 # Conclusion:
+
+Runninng this aggressive lineup worked very well for the Warriors in the
+2016 season. It’s clear why. Curry and Thompson are aggressive three
+point shooters and willing to shoot in the midrange if needed. Whereas
+durant and Iguodala are very effective at getting in close to the basket
+and making two point shots
