@@ -1,5 +1,5 @@
 ---
-title: "Is Curry the Most Effective Warrior?"
+title: "The Warriors’ Star Lineup (Iguodala, Green, Durant, Thompson, Curry)"
 author: "Andrea (Drew) Galloro"
 output: github_document
 ---
@@ -77,27 +77,51 @@ from left to right: Curry, Green, Durant, Thompson, and Iguodala
 
 First, we're going to look at the player's behavior on the court. To aid us, I've made the chart of half-court shooting data below. (shot_made_flag is an indicator of wether the attempted shot scored)
 
-```{r out.width = "80%", echo = FALSE, align = "center"}
+```{r out.width = "95%", echo = FALSE, align = "center"}
 knitr::include_graphics("../images/gsw-shot-charts.png")
 ```
 
-So what can we say about the players from looking at these? First, for Durant Thompson and Curry, they are shooting in the midrange frequently, while Iguodala and Green favor eighter shots on the 3pt line or under the basket. Second, Curry seems more willing to attempt shots closer to half court. This does not lead to a scored basket the majority of the time, but it says he's willing to take the risk. It could also be that he is the main shooter and often has the ball at the end of periods and so is forced to take the shot. 
+So what can we say about the players from looking at these? First, for Durant Thompson and Curry, they are shooting in the midrange frequently, while Iguodala and Green favor eighter shots on the 3pt line or under the basket, especially Green. Second, Curry seems more willing to attempt shots closer to half court. This does not lead to a scored basket the majority of the time, but it says he's willing to take the risk. It could also be that he is the main shooter and often has the ball at the end of periods and so is forced to take the shot. 
 
 # Effective Shooting Percentages:
 
-# 2pt
+### Effectiveness at long distance
+
+Now, let's actually see if Curry performs at long distance compared to the rest of the lineup. Below is a table of each player's shooting percent when they are farther than 250 in away from the basket
+
 ```{r echo = FALSE}
-kable(s2pt, caption = "Two Pointers")
+kable(fs, caption = "ordered by percentage of effective shots")
 ```
 
-# 3pt
+Curry actually places third among his teamates, behind Klay Thompson and Kevin Durant. However, he is making more shots overall because he is attempting more than twice anyone else. Klay Thompson is the most effective at this range filling in the Gap of his "Splash Brother". Not to say these shots are easy to make, both players are performing very well. 
+
+### How about overall effectiveness?
+
+Below is a table from the same data source, but now we aren't restricting it to shots far away from the basket. So how do the star players hold up?
+
+```{r echo = FALSE}
+kable(st, caption = "ordered by percentage of effective shots")
+```
+
+Stephen Curry and Klay Thompson are now towards the bottom of the table, with Kevin Durant taking the lead: a surprise upset. This trend is continued if we only look at two pointers
+
+### Two pointers
+
+```{r echo = FALSE}
+kable(s2pt, caption = "ordered by effective shooting percentages")
+```
+
+Except now Iguodala leads the pack in effectiveness.
+
+### Three Pointers
+
+But what about three pointers, Curry's staple?
+
 ```{r echo = FALSE}
 kable(s3pt)
 ```
 
-# total
-```{r echo = FALSE}
-kable(st)
-```
+Here the "Splash Brothers" are in the lead with Kevin Durant close behind. Notice that While Clay is more effective at making shots, he has made less then Curry. This suggests a more reckless shooting style for curry.
 
 
+# Conclusion: 
