@@ -127,4 +127,4 @@ Runninng this aggressive lineup worked very well for the Warriors in the
 2016 season. It’s clear why. Curry and Thompson are aggressive three
 point shooters and willing to shoot in the midrange if needed. Whereas
 durant and Iguodala are very effective at getting in close to the basket
-and making two point shots
+and making two point shots.
