@@ -26,6 +26,7 @@ bin_distribution <- function(trials = 2, prob = .5){
 plot.bindis <- function(x, ...){
   ggplot2::ggplot(x, ggplot2::aes(x = success, y = probability)) +
     ggplot2::geom_col() +
-    ggplot2::theme_classic()
+    ggplot2::theme_classic() +
+    ggplot2::labs(x = "Successes", y = "Probability")
 }
 

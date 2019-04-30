@@ -25,5 +25,6 @@ plot.bincum <- function(x, ...){
   ggplot2::ggplot(x, ggplot2::aes(x = success, y = cumulative)) +
     ggplot2::geom_point(shape = 1) +
     ggplot2::geom_line() +
-    ggplot2::theme_classic()
+    ggplot2::theme_classic() +
+    ggplot2::labs(x = "Successes", y = "Probability")
 }
