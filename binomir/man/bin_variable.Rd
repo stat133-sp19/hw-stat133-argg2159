@@ -12,10 +12,10 @@ bin_variable(trials = 1, prob = 0.5)
 \item{prob}{probability must be between 0 and 1 inclusive}
 }
 \value{
-a named containg the two parameters of the binomial random variable
+a named list containg the two parameters of the binomial random variable
 }
 \description{
-creates an object of class binvar. A vector with names
+creates an object of class binvar. A list with two named elements
 trials and probability.
 }
 \examples{
