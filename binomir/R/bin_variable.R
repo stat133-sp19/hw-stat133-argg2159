@@ -10,7 +10,14 @@
 #' bin_variable(10, .3)
 #' bin_variable(100, .75)
 bin_variable <- function(trials = 1, prob = .5){
+  check_trials(trials)
+  check_prob(prob)
   x <- c(trials = trials, probability = prob)
   class(x) <- "binvar"
   return(x)
+}
+
+@export
+print.binvar <- function(x, ...){
+
 }
