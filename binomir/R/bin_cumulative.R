@@ -23,6 +23,6 @@ bin_cumulative <- function(trials = 2, prob = .5){
 #' @export
 plot.bincum <- function(x, ...){
   ggplot2::ggplot(x, ggplot2::aes(x = success, y = cumulative)) +
-    ggplot2::geom_point() +
+    ggplot2::geom_point(shape = 1) +
     ggplot2::theme_classic()
 }
