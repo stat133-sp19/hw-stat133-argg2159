@@ -27,12 +27,16 @@ aux_variance <- function(p = .5, trials = 1){
 #and probability
 #
 aux_mode <- function(p = .5, trials = 1){
+  m <- (trials + 1)*p
   if (p == 0){
     return(1)
   } else if (p == 1){
     return(trials)
+  } else if (2*m == round(2*m)){
+    x <- c(floor(m), ceiling(m))
+    return(x)
   } else {
-    x <- floor((trials + 1)*p)
+    x <- round(m)
     return(x)
   }
 }
