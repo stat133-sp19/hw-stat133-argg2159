@@ -14,6 +14,6 @@ bin_probability <- function(p = .5, trials = 1, success = 1){
   check_prob(p)
   check_trials(trials)
   check_success(trials, success)
-  x <- bin_choose(n = trials, k = success)*(p^success)*(p^(trials - success))
+  x <- bin_choose(n = trials, k = success)*(p^success)*((1 -p)^(trials - success))
   return(x)
 }
