@@ -10,7 +10,9 @@
 #' bin_mean(5)
 #' bin_mean(100, .3)
 bin_mean <- function(trials = 1, prob = .5){
-
+  check_trials(trials)
+  check_prob(prob)
+  aux_mean(p = prob, trials = trials)
 }
 
 #' @title bin_variance
@@ -26,7 +28,9 @@ bin_mean <- function(trials = 1, prob = .5){
 #' bin_variance(5)
 #' bin_variance(100, .3)
 bin_variance <- function(trials = 1, prob = .5){
-
+  check_trials(trials)
+  check_prob(prob)
+  aux_variance(p = prob, trials = trials)
 }
 
 #' @title bin_mode
@@ -42,7 +46,9 @@ bin_variance <- function(trials = 1, prob = .5){
 #' bin_mode(5)
 #' bin_mode(100, .3)
 bin_mode <- function(trials = 1, prob = .5){
-
+  check_trials(trials)
+  check_prob(prob)
+  aux_mode(p = prob, trials = trials)
 }
 
 #' @title bin_skewness
@@ -57,7 +63,9 @@ bin_mode <- function(trials = 1, prob = .5){
 #' bin_skewness(5)
 #' bin_skewness(100, .3)
 bin_skewness <- function(trials = 1, prob = .5){
-
+  check_trials(trials)
+  check_prob(prob)
+  aux_skewness(p = prob, trials = trials)
 }
 
 #' @title bin_kurtosis
@@ -73,5 +81,7 @@ bin_skewness <- function(trials = 1, prob = .5){
 #' bin_kurtosis(5)
 #' bin_kurtosis(100, .3)
 bin_kurtosis <- function(trials = 1, prob = .5){
-
+  check_trials(trials)
+  check_prob(prob)
+  aux_kurtosis(p = prob, trials = trials)
 }
