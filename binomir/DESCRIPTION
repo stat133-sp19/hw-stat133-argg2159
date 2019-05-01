@@ -4,8 +4,9 @@ Title: Easy interaction with binomial distribution
 Version: 0.1.0
 Author: Andrea Galloro
 Maintainer: Andrea Galloro <argg2159@berkeley.edu>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Contains functions and methods for ease of access to 
+    a binomial random variable. Includes different summary statistics
+    and methods for the pdf and cdf.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
