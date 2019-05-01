@@ -1,7 +1,7 @@
 #' @title bin_cumulative
 #' @description computes and tabulates the cumulative density for the given
 #' binomial distribution. Also gives the density.
-#' @param trials (integer) the total number of trials
+#' @param trials (integer) the total number of trials. Must be a positive integer.
 #' @param prob (numeric) the probability of success on each trial. Must be between
 #' 0 and 1 inclusive.
 #' @return a data frame of class c("bincum", "data.frame") containing three columns:

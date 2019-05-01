@@ -1,7 +1,7 @@
 #' @title bin_variable
 #' @description creates an object of class binvar. A list with two named elements
 #' trials and probability.
-#' @param trials number of trials
+#' @param trials number of trials. Must be a positive integer.
 #' @param prob probability must be between 0 and 1 inclusive
 #' @return a named list containg the two parameters of the binomial random variable
 #' @export

@@ -2,7 +2,7 @@
 #' @description Computes the probability distribution of a binomial with a given
 #' number of trials and probability. It tabulates the probability of each number of
 #' successes.
-#' @param trials (integer) the number of trials
+#' @param trials (integer) the number of trials. Must be a positive integer
 #' @param prob (real) the probability of success on each trial. Must be between 0 and 1.
 #' @return a data frame of class c("bindis", "dataframe") containing the probability distribution
 #' @export

@@ -1,6 +1,6 @@
 #' @title bin_mean
 #' @description computes the mean of a given binomial distribution
-#' @param trials number of trials
+#' @param trials number of trials. Must be a positive integer
 #' @param prob probability of success on each trial. Must be
 #' between 0 and 1
 #' @return the expected value of the given binomial distribution
@@ -16,7 +16,7 @@ bin_mean <- function(trials = 1, prob = .5){
 #' @title bin_variance
 #' @description computes the variance of the given binomial distribution.
 #' Variance is a representation of the average spread about the mean.
-#' @param trials number of trials
+#' @param trials number of trials. Must be a positive integer.
 #' @param prob probability of success on each trial. must be
 #' between 0 and 1
 #' @return the variance of the binomial distribution
@@ -32,7 +32,7 @@ bin_variance <- function(trials = 1, prob = .5){
 #' @title bin_mode
 #' @description computes the most likeley value(s) of the given
 #' binomial distribution. i.e. the mode(s) of the distribution.
-#' @param trials number of trials
+#' @param trials number of trials. Must be a positive integer.
 #' @param prob probability of success in each trial. Must be
 #' between 0 and 1
 #' @return the mode of the binomial distribution
@@ -48,8 +48,7 @@ bin_mode <- function(trials = 1, prob = .5){
 #' @title bin_skewness
 #' @description computes the skewness of the given binomial distribution.
 #' skewness is a measure of the assymetry of the distribution about its mean.
-#' negative values mean that it is skewed left, positive skewed right.
-#' @param trials number of trials
+#' @param trials number of trials. Must be a positive integer.
 #' @param prob probability of success on each trial. Must be between 0 and 1.
 #' @return a measure of the skewness of the binomial distribution
 #' @export
@@ -64,7 +63,7 @@ bin_skewness <- function(trials = 1, prob = .5){
 #' @title bin_kurtosis
 #' @description computes the kurtosis of the given binomial distribution.
 #' The kurtosis is a descriptor for the "tailness" of a distribution
-#' @param trials number of trials. must be an integer
+#' @param trials number of trials. Must be a positive integer.
 #' @param prob probability of success on each trial. Must be
 #' between 0 and 1.
 #' @return a measure of the kurtosis of the given distribution.

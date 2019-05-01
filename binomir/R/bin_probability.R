@@ -1,7 +1,7 @@
 #' @title bin_probability
 #' @description computes the probability density for a given
 #' number of trials and successes, and a given probability.
-#' @param trials (integer) number of trials. default 1
+#' @param trials (integer) number of trials. Must be a positive integer
 #' @param success (integer) number of desired successes, must be less than n
 #' default 1
 #' @param p (real) probability, 0 <= p <= 1. default .5
