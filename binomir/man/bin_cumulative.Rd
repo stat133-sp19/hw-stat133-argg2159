@@ -7,7 +7,7 @@
 bin_cumulative(trials = 2, prob = 0.5)
 }
 \arguments{
-\item{trials}{(integer) the total number of trials}
+\item{trials}{(integer) the total number of trials. Must be a positive integer.}
 
 \item{prob}{(numeric) the probability of success on each trial. Must be between
 0 and 1 inclusive.}

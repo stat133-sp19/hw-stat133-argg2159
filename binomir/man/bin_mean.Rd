@@ -7,7 +7,7 @@
 bin_mean(trials = 1, prob = 0.5)
 }
 \arguments{
-\item{trials}{number of trials}
+\item{trials}{number of trials. Must be a positive integer}
 
 \item{prob}{probability of success on each trial. Must be
 between 0 and 1}

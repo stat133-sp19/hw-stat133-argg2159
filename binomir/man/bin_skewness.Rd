@@ -7,7 +7,7 @@
 bin_skewness(trials = 1, prob = 0.5)
 }
 \arguments{
-\item{trials}{number of trials}
+\item{trials}{number of trials. Must be a positive integer.}
 
 \item{prob}{probability of success on each trial. Must be between 0 and 1.}
 }
@@ -17,7 +17,6 @@ a measure of the skewness of the binomial distribution
 \description{
 computes the skewness of the given binomial distribution.
 skewness is a measure of the assymetry of the distribution about its mean.
-negative values mean that it is skewed left, positive skewed right.
 }
 \examples{
 bin_skewness()

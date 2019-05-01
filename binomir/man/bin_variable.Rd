@@ -7,7 +7,7 @@
 bin_variable(trials = 1, prob = 0.5)
 }
 \arguments{
-\item{trials}{number of trials}
+\item{trials}{number of trials. Must be a positive integer.}
 
 \item{prob}{probability must be between 0 and 1 inclusive}
 }

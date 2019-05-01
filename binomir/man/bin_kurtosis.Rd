@@ -7,7 +7,7 @@
 bin_kurtosis(trials = 1, prob = 0.5)
 }
 \arguments{
-\item{trials}{number of trials. must be an integer}
+\item{trials}{number of trials. Must be a positive integer.}
 
 \item{prob}{probability of success on each trial. Must be
 between 0 and 1.}

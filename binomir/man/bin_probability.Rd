@@ -9,7 +9,7 @@ bin_probability(p = 0.5, trials = 1, success = 1)
 \arguments{
 \item{p}{(real) probability, 0 <= p <= 1. default .5}
 
-\item{trials}{(integer) number of trials. default 1}
+\item{trials}{(integer) number of trials. Must be a positive integer}
 
 \item{success}{(integer) number of desired successes, must be less than n
 default 1}
