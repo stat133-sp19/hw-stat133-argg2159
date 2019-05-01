@@ -23,9 +23,36 @@ print.binvar <- function(x, ...){
   cat("Parameters:\n")
   cat("- number of trials:", x$trials, "\n")
   cat("- probability of success:", x$probability, "\n")
+  invisible(x)
 }
 
 #' @export
 summary.binvar <- function(x, ...){
+  prob <- x$probability
+  trials <- x$trials
+  y <- list(trials = trials,
+            probability = prob,
+            mean = aux_mean(p = prob, trials = trials),
+            variance = aux_variance(p = prob, trials = trials),
+            mode = aux_mode(p = prob, trials = trials),
+            skewness = aux_skewness(p = prob, trials = trials),
+            kurtosis = aux_kurtosis(p = prob, trials = trials)
+            )
+  class(y) <- "summary.binvar"
+  return(y)
+}
 
+#' @export
+print.summary.binvar <- function(x, ...){
+  cat("Summary Binomial\n\n")
+  cat("Parameters:\n")
+  cat("- number of trials      :", x$trials, "\n")
+  cat("- probability of success:", x$probability, "\n\n")
+  cat("Measures:\n")
+  cat("- mean    :", x$mean, "\n")
+  cat("- variance:", x$variance, "\n")
+  cat("- mode(s) :", x$mode, "\n")
+  cat("- skewness:", x$skewness, "\n")
+  cat("- kurtosis:", x$kurtosis, "\n")
+  invisible(x)
 }
