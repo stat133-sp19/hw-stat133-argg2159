@@ -14,10 +14,9 @@ test_that("aux_variance works", {
 
 test_that("aux_mode works", {
   expect_type(aux_mode(), "double")
-  expect_length(aux_mode(), 1)
+  expect_length(aux_mode(), 2)
   expect_equal(aux_mode(.3, 10), 3)
-  expect_length(aux_mode(.5,10), 2)
-  expect_equal(aux_mode(.5,10), c(2,3))
+  expect_length(aux_mode(.5,10), 1)
 })
 
 test_that("aux_skewness works", {

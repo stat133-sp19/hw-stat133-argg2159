@@ -4,10 +4,10 @@
 \alias{bin_probability}
 \title{bin_probability}
 \usage{
-bin_probability(p = 0.5, trials = 1, success = 1)
+bin_probability(prob = 0.5, trials = 1, success = 1)
 }
 \arguments{
-\item{p}{(real) probability, 0 <= p <= 1. default .5}
+\item{prob}{(real) probability, 0 <= p <= 1. default .5}
 
 \item{trials}{(integer) number of trials. Must be a positive integer}
 
@@ -23,5 +23,5 @@ number of trials and successes, and a given probability.
 }
 \examples{
 bin_probability(2, 5, .5)
-bin_probability(success = 0:2, trials = 5, p = .45)
+bin_probability(success = 0:2, trials = 5, prob = .45)
 }

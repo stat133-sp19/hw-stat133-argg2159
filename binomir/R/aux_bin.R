@@ -32,11 +32,11 @@ aux_mode <- function(p = .5, trials = 1){
     return(1)
   } else if (p == 1){
     return(trials)
-  } else if (2*m == round(2*m)){
-    x <- c(floor(m), ceiling(m))
+  } else if (m == as.integer(m)){
+    x <- c(m - 1, m)
     return(x)
   } else {
-    x <- round(m)
+    x <- floor(m)
     return(x)
   }
 }
