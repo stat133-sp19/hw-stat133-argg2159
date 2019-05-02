@@ -14,9 +14,10 @@ knitr::opts_chunk$set(
   
 )
 library(binomir)
+library(ggplot2)
 ```
 
-Welcome to binomir, a package designed for ease of access to the binomial distribution. All functions will check that the inputs are conceptually valid.
+Welcome to binomir, a package designed for ease of access to the binomial distribution. All functions will check that the inputs are conceptually valid. This package requires ggplot2.
 
 ### The Binomial Distribution
 A binomial distribution is, at it's core, a sum of independent bernoulli trials. So a binomial distribution has two parameters: the number of trials and the probability of success on each distribution. In most functions in this package they call the parameters trials and prob.
